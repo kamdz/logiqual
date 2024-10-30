@@ -4,7 +4,7 @@ A lightweight library for comparing boolean functions and generating truth table
 
 ## 🚀 Features
 
-- **Function comparison** – determine if two boolean functions produce the same outputs for all possible inputs.
+- **Functions comparison** – determine if two boolean functions produce the same outputs for all possible inputs.
 - **Truth table generation** – create detailed truth tables for any variadic boolean function.
 - **Detailed mismatch reporting** – provides specific input combinations where functions differ.
 
