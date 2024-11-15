@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/kamdz/logiqual/compare/v1.0.1...v1.0.2) (2024-11-15)
+
+
+### Bug Fixes
+
+* **deps:** bump cross-spawn in the npm_and_yarn group ([2b91d36](https://github.com/kamdz/logiqual/commit/2b91d3605adb009bde460845a26f4f203c63510a))
+
 ## [1.0.1](https://github.com/kamdz/logiqual/compare/v1.0.0...v1.0.1) (2024-11-15)
 
 
