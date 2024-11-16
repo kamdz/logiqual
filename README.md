@@ -39,6 +39,24 @@ const table = generateTruthTable((a, b) => a && b);
 console.table(table);
 ```
 
+### Command Line Interface (CLI)
+You can also use it via the command line:
+
+```bash
+npx logiqual '(x, y) => x && y' '(x, y) => x || y'
+# false
+# [
+#   [
+#     { x: false, y: true, result: false },
+#     { x: false, y: true, result: true }
+#   ],
+#   [
+#     { x: true, y: false, result: false },
+#     { x: true, y: false, result: true }
+#   ]
+# ]
+```
+
 ## 🔧 API
 
 ### `compareFunctions(funcA: VariadicFunction, funcB: VariadicFunction): { isEqual: boolean; differences: Difference[] }`
