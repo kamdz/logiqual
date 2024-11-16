@@ -1,8 +1,8 @@
 import getBinaryPermutations from 'bin-perm-gen';
 
-type VariadicFunction = (...args: boolean[]) => boolean;
-type TruthTableEntry = Record<string, boolean>;
-type Difference = [TruthTableEntry, TruthTableEntry];
+export type VariadicFunction = (...args: boolean[]) => boolean;
+export type TruthTableEntry = Record<string, boolean>;
+export type Difference = [TruthTableEntry, TruthTableEntry];
 
 function getParameterNames(func: VariadicFunction): string[] {
   const paramsString = func.toString().match(/\(([^)]*)\)/)?.[1] || '';
