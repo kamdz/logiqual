@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/kamdz/logiqual/compare/v1.0.2...v1.0.3) (2024-11-16)
+
+
+### Bug Fixes
+
+* export types ([17b3903](https://github.com/kamdz/logiqual/commit/17b39037041cb8a412ce4d6de2716308b82cb435))
+
 ## [1.0.2](https://github.com/kamdz/logiqual/compare/v1.0.1...v1.0.2) (2024-11-15)
 
 
