@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/kamdz/logiqual/compare/v1.0.3...v1.0.4) (2024-11-18)
+
+
+### Bug Fixes
+
+* **deps:** bump bin-perm-gen from 1.0.3 to 1.0.4 ([ec4ab63](https://github.com/kamdz/logiqual/commit/ec4ab63f3d3c5ee3eba240bcd369200c1baedb37))
+
 ## [1.0.3](https://github.com/kamdz/logiqual/compare/v1.0.2...v1.0.3) (2024-11-16)
 
 
