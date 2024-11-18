@@ -3016,12 +3016,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bin-perm-gen@npm:^1.0.3":
-  version: 1.0.3
-  resolution: "bin-perm-gen@npm:1.0.3"
+"bin-perm-gen@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "bin-perm-gen@npm:1.0.4"
   bin:
     bin-perm-gen: dist/cli.js
-  checksum: 10c0/4f1d545eafb8c2f63b5cd3727cd47796ec3b14f0e197c87b932cde2727d41d874a1365e12dda74e7d416333012f04b0a7eb8f76bc93d667fca5a123692fa9344
+  checksum: 10c0/d44b1f07b06841409f148374e6474c67c0bee98c2efb2ee79d3998ac231f5b0b4ed62478f2e6066d8a509646b5e086d0b4aca18e8b98cc35e1c7946d1d33032c
   languageName: node
   linkType: hard
 
@@ -7276,7 +7276,7 @@ __metadata:
     "@types/fs-extra": "npm:^11.0.4"
     "@types/jest": "npm:^29.5.14"
     "@types/node": "npm:^22.9.0"
-    bin-perm-gen: "npm:^1.0.3"
+    bin-perm-gen: "npm:^1.0.4"
     commitizen: "npm:^4.3.1"
     cz-conventional-changelog: "npm:^3.3.0"
     eslint: "npm:^9.14.0"
