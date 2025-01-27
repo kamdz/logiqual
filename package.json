@@ -1,6 +1,6 @@
 {
   "name": "logiqual",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A lightweight library for comparing boolean functions and generating truth tables.",
   "keywords": [
     "boolean",

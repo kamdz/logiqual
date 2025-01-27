@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/kamdz/logiqual/compare/v1.0.5...v1.0.6) (2025-01-27)
+
+
+### Bug Fixes
+
+* exports ([e42bd69](https://github.com/kamdz/logiqual/commit/e42bd69c07630a8873af75e7c9b5501d865f42ff))
+
 ## [1.0.5](https://github.com/kamdz/logiqual/compare/v1.0.4...v1.0.5) (2024-11-28)
 
 
