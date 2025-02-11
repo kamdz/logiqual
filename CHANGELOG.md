@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/kamdz/logiqual/compare/v1.0.6...v1.0.7) (2025-02-11)
+
+
+### Bug Fixes
+
+* **deps:** bump bin-perm-gen in the dependencies group ([5885a2f](https://github.com/kamdz/logiqual/commit/5885a2fc27b03bbb59ee35dfd94e107a7b886a41))
+
 ## [1.0.6](https://github.com/kamdz/logiqual/compare/v1.0.5...v1.0.6) (2025-01-27)
 
 
