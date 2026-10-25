@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.0.0](https://github.com/kamdz/logiqual/compare/v1.0.7...v2.0.0) (2026-10-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* ESM-only package, requires Node >=22.12. Invalid arguments throw TypeError / RangeError. Function results are coerced to booleans.
+
+### Features
+
+* modernize stack and use bin-perm-gen v2 ([3ae0243](https://github.com/kamdz/logiqual/commit/3ae02436e66aeeb9eebb7b48d0397193773d9e5f))
+
+
+### Bug Fixes
+
+* **cli:** print comparison result without ANSI colors ([9bce94b](https://github.com/kamdz/logiqual/commit/9bce94bc88e64802ac75825630a16314aa2c8d6a))
+* **deps:** bump @octokit/endpoint from 10.1.1 to 10.1.3 in the npm_and_yarn group ([810b81a](https://github.com/kamdz/logiqual/commit/810b81a2627e0fb00ae2070ec5b85992dc5dc0cb))
+* **deps:** bump @octokit/endpoint in the npm_and_yarn group ([27c4dad](https://github.com/kamdz/logiqual/commit/27c4dadd2950e994b7c5fdf824714066d527458b))
+
 ## [1.0.7](https://github.com/kamdz/logiqual/compare/v1.0.6...v1.0.7) (2025-02-11)
 
 
