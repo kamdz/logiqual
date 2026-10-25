@@ -87,15 +87,24 @@ describe('generateTruthTable', () => {
   it('reads parameter names from any function syntax', () => {
     const keys = (func: VariadicFunction) => Object.keys(generateTruthTable(func)[0] ?? {});
 
-    assert.deepEqual(keys(x => !x), ['x', 'result']);
-    assert.deepEqual(keys(x => x && !x), ['x', 'result']);
+    assert.deepEqual(
+      keys(x => !x),
+      ['x', 'result']
+    );
+    assert.deepEqual(
+      keys(x => x && !x),
+      ['x', 'result']
+    );
     assert.deepEqual(
       keys(function named(p, q) {
         return p !== q;
       }),
       ['p', 'q', 'result']
     );
-    assert.deepEqual(keys((/* first */ a, b /* second */) => a && b), ['a', 'b', 'result']);
+    assert.deepEqual(
+      keys((/* first */ a, b /* second */) => a && b),
+      ['a', 'b', 'result']
+    );
   });
 
   it('falls back to generic names when parameters cannot be read', () => {

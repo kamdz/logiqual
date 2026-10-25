@@ -35,7 +35,7 @@ function main(): void {
   }
 
   const { isEqual, differences } = compare(funcA as VariadicFunction, funcB);
-  console.log(isEqual);
+  console.log(String(isEqual));
   if (!isEqual) console.dir(differences, { depth: null });
 }
 

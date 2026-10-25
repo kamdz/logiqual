@@ -28,8 +28,7 @@ const assertFunction: (value: unknown, name: string) => asserts value is Variadi
  */
 function getParameterNames(func: VariadicFunction): string[] {
   const source = Function.prototype.toString.call(func).replace(/\/\*[\s\S]*?\*\/|\/\/.*$/gm, '');
-  const params =
-    source.match(/^\s*(?:async\s+)?([\w$]+)\s*=>/)?.[1] ?? source.match(/^[^(]*\(([^)]*)\)/)?.[1] ?? '';
+  const params = source.match(/^\s*(?:async\s+)?([\w$]+)\s*=>/)?.[1] ?? source.match(/^[^(]*\(([^)]*)\)/)?.[1] ?? '';
 
   const names = params
     .split(',')
