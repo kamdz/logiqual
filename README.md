@@ -1,12 +1,13 @@
 # ⚖️ logiqual
 
-A lightweight library for comparing boolean functions and generating truth tables. This tool allows you to validate the equality of logical expressions efficiently and effectively.
+A lightweight library for comparing boolean functions and generating truth tables. Check whether two logical expressions are equivalent and see exactly where they differ.
 
 ## 🚀 Features
 
-- **Functions comparison** – determine if two boolean functions produce the same outputs for all possible inputs.
-- **Truth table generation** – create detailed truth tables for any variadic boolean function.
-- **Detailed mismatch reporting** – provides specific input combinations where functions differ.
+- **Function comparison** – check whether two boolean functions return the same value for every input.
+- **Truth tables** – generate the full truth table of any boolean function.
+- **Detailed mismatches** – every input on which the functions differ, labelled with each function's own parameter names.
+- **CLI** – compare expressions or print truth tables straight from the terminal.
 
 ## 🛠️ Installation
 
@@ -14,64 +15,77 @@ A lightweight library for comparing boolean functions and generating truth table
 npm install logiqual
 ```
 
+Requires Node.js 22.12 or later. The package is ESM-only; `require('logiqual')` also works on supported Node versions.
+
 ## 📖 Usage
 
-### Comparing Functions
+### Comparing functions
 
-```javascript
-import { compareFunctions } from 'logiqual';
+```js
+import { compare } from 'logiqual';
 
-const result = compareFunctions(
+const { isEqual, differences } = compare(
   (x, y) => x && y,
   (x, y) => x || y
 );
 
-console.log(result.isEqual); // false
-console.log(result.differences); // Detailed differences
+console.log(isEqual); // false
+console.log(differences);
+// [
+//   [ { x: false, y: true, result: false }, { x: false, y: true, result: true } ],
+//   [ { x: true, y: false, result: false }, { x: true, y: false, result: true } ]
+// ]
 ```
 
-### Generating a Truth Table
+`compareFunctions` and the default export are aliases of `compare`.
 
-```javascript
+### Generating a truth table
+
+```js
 import { generateTruthTable } from 'logiqual';
 
-const table = generateTruthTable((a, b) => a && b);
-console.table(table);
+console.table(generateTruthTable((a, b) => a && b));
 ```
 
-### Command Line Interface (CLI)
-You can also use it via the command line:
+### Command line
 
 ```bash
+npx logiqual '(x, y) => !(x && y)' '(x, y) => !x || !y'
+# true
+
 npx logiqual '(x, y) => x && y' '(x, y) => x || y'
 # false
-# [
-#   [
-#     { x: false, y: true, result: false },
-#     { x: false, y: true, result: true }
-#   ],
-#   [
-#     { x: true, y: false, result: false },
-#     { x: true, y: false, result: true }
-#   ]
-# ]
+# [ [ { x: false, y: true, result: false }, { x: false, y: true, result: true } ], ... ]
+
+npx logiqual '(a, b) => a && b'
+# prints the truth table
 ```
+
+The arguments are evaluated as JavaScript, so only pass expressions you trust.
 
 ## 🔧 API
 
-### `compareFunctions(funcA: VariadicFunction, funcB: VariadicFunction): { isEqual: boolean; differences: Difference[] }`
+### `compare(funcA, funcB): ComparisonResult`
 
-Compares two boolean functions for equality based on their outputs for all possible input combinations.
+Evaluates both functions for every combination of inputs.
 
-- `funcA` (VariadicFunction): The first function to compare.
-- `funcB` (VariadicFunction): The second function to compare.
-- **Returns**: An object with:
-  - `isEqual` (boolean): Whether the functions are equal.
-  - `differences` (Difference[]): An array of mismatches found.
+- **Returns** `{ isEqual: boolean; differences: Difference[] }`, where each difference is `[rowOfA, rowOfB]` for one input.
+- **Throws** `TypeError` when an argument is not a function and `RangeError` when the functions take a different number of parameters.
 
-### `generateTruthTable(func: VariadicFunction): TruthTableEntry[]`
+### `generateTruthTable(func): TruthTableEntry[]`
 
-Generates a truth table for a given variadic boolean function.
+Returns one row per combination of inputs: every parameter by name plus `result`.
 
-- `func` (VariadicFunction): The function to generate the truth table for.
-- **Returns**: An array of objects representing the truth table.
+Parameter names are read from the function's source (`x => …`, `(x, y) => …`, `function (x, y) {…}`). When they can't be read, for example with rest parameters, the rows use `arg0`, `arg1`, …. Results are coerced to booleans.
+
+## 🧑‍💻 Development
+
+```bash
+npm install
+npm test           # node:test, runs the TypeScript sources directly
+npm run lint       # Biome (lint + format check), npm run lint:fix to fix
+npm run typecheck
+npm run build      # tsc → dist/
+```
+
+Releases are automated with [release-please](https://github.com/googleapis/release-please) from [Conventional Commits](https://www.conventionalcommits.org/) and published to npm with trusted publishing.

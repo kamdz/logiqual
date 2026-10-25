@@ -1,3 +1,5 @@
+# Changelog
+
 ## [1.0.7](https://github.com/kamdz/logiqual/compare/v1.0.6...v1.0.7) (2025-02-11)
 
 
